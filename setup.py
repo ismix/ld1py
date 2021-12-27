@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ld1py",
-    version="0.0.7",
+    version="0.0.8",
     author="LD1 Labs",
     author_email="info@ld1labs.com",
     description="Common python utilities for LD1 Labs projects",
