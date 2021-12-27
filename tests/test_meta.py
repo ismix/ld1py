@@ -5,9 +5,9 @@ def test_singleton_class_is_created_only_once(mocker):
     class SingletonClass(metaclass=SingletonMeta):
         def __init__(self, stub):
             super().__init__()
-            stub('called')
+            stub("called")
 
-    stub = mocker.stub(name='on_init_stub')
+    stub = mocker.stub(name="on_init_stub")
 
     first = SingletonClass(stub)
     second = SingletonClass(stub)
@@ -38,7 +38,7 @@ def test_cleanup_cleans_up_all_instances(mocker):
             pass
 
     obj = SingletonClass()
-    spied = mocker.spy(obj, '_cleanup')
+    spied = mocker.spy(obj, "_cleanup")
 
     SingletonMeta.cleanup()
     spied.assert_called_once()

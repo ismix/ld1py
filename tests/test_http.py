@@ -1,5 +1,6 @@
 import pytest
 import requests
+
 from ld1py.http import ApiRequestError
 from ld1py.http import WithRetries
 

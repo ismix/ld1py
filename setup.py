@@ -1,21 +1,21 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README.md", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='ld1py',
-    version='0.0.6',
-    author='LD1 Labs',
-    author_email='info@ld1labs.com',
-    description='Common python utilities for LD1 Labs projects',
+    name="ld1py",
+    version="0.0.7",
+    author="LD1 Labs",
+    author_email="info@ld1labs.com",
+    description="Common python utilities for LD1 Labs projects",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/ismix/ld1py',
+    url="https://github.com/ismix/ld1py",
     project_urls={
-        "Bug Tracker": "https://github.com/ismix/ld1py/issues"
+        "Bug Tracker": "https://github.com/ismix/ld1py/issues",
     },
-    license='MIT',
-    packages=['ld1py'],
-    install_requires=['requests'],
+    license="MIT",
+    packages=["ld1py"],
+    install_requires=["requests"],
 )
