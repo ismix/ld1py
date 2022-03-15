@@ -1,3 +1,4 @@
+import inspect
 from typing import Any
 from typing import Dict
 
@@ -21,3 +22,15 @@ class SingletonMeta(type):
         for i in cls._instances.values():
             if hasattr(i, "_cleanup"):
                 i._cleanup()
+
+
+class AsyncSingletonMeta(SingletonMeta):
+    @classmethod
+    async def cleanup(cls):
+        """Cleanup all singletons if they expose a method for it"""
+        for i in cls._instances.values():
+            if hasattr(i, "_cleanup"):
+                if inspect.iscoroutinefunction(i._cleanup):
+                    await i._cleanup()
+                else:
+                    i._cleanup()
