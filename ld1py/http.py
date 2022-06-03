@@ -38,6 +38,7 @@ class WithRetries:
                         return resp
                     elif resp is not None:
                         logger.warning(f"API error: {resp.text}")
+                        error = Exception(resp.text)
                 except requests.exceptions.HTTPError as e:
                     logger.warning("Got an http error.")
                     error = e
